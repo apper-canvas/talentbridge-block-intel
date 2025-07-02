@@ -1,0 +1,182 @@
+[
+  {
+    "Id": 1,
+    "name": "TechFlow Solutions",
+    "logo": "https://images.unsplash.com/photo-1549924231-f129b911e442?w=100&h=100&fit=crop&crop=entropy",
+    "industry": "Technology",
+    "size": "50-200 employees",
+    "description": "TechFlow Solutions is a leading software development company specializing in modern web applications and cloud solutions. We help businesses transform their digital presence through innovative technology solutions.",
+    "culture": "We foster a collaborative environment where creativity and innovation thrive. Our team values work-life balance, continuous learning, and making a meaningful impact through technology.",
+    "benefits": [
+      "Competitive salary and equity",
+      "Comprehensive health insurance",
+      "Flexible work arrangements",
+      "Professional development budget",
+      "Unlimited PTO",
+      "Modern office with snacks"
+    ],
+    "openPositions": 3
+  },
+  {
+    "Id": 2,
+    "name": "InnovateCorp",
+    "logo": "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=100&h=100&fit=crop&crop=entropy",
+    "industry": "Enterprise Software",
+    "size": "200-500 employees",
+    "description": "InnovateCorp develops enterprise software solutions that help large organizations streamline their operations and improve efficiency. We're at the forefront of digital transformation.",
+    "culture": "Innovation is at our core. We encourage bold thinking, rapid experimentation, and learning from failures. Our diverse team brings together different perspectives to solve complex challenges.",
+    "benefits": [
+      "Stock options",
+      "Premium healthcare",
+      "Retirement planning",
+      "Learning stipend",
+      "Remote work options",
+      "Team building events"
+    ],
+    "openPositions": 5
+  },
+  {
+    "Id": 3,
+    "name": "DesignStudio Plus",
+    "logo": "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=100&h=100&fit=crop&crop=entropy",
+    "industry": "Design & Creative",
+    "size": "20-50 employees",
+    "description": "DesignStudio Plus is a creative agency focused on delivering exceptional user experiences through thoughtful design and strategic thinking. We work with startups and Fortune 500 companies alike.",
+    "culture": "Creativity flows through everything we do. We believe in the power of good design to solve problems and create meaningful connections between brands and their audiences.",
+    "benefits": [
+      "Creative freedom",
+      "Flexible schedule",
+      "Design tool subscriptions",
+      "Conference attendance",
+      "Wellness programs",
+      "Pet-friendly office"
+    ],
+    "openPositions": 2
+  },
+  {
+    "Id": 4,
+    "name": "CloudTech Systems",
+    "logo": "https://images.unsplash.com/photo-1553484771-371a605b060b?w=100&h=100&fit=crop&crop=entropy",
+    "industry": "Cloud Infrastructure",
+    "size": "100-200 employees",
+    "description": "CloudTech Systems provides enterprise-grade cloud infrastructure solutions that scale with businesses of all sizes. Our platform enables companies to build, deploy, and manage applications with confidence.",
+    "culture": "We're builders at heart. Our engineering-first culture emphasizes technical excellence, scalability, and reliability. We believe in empowering our team to make decisions and own their work.",
+    "benefits": [
+      "Competitive compensation",
+      "Health and dental",
+      "Technical training",
+      "Home office setup",
+      "Sabbatical program",
+      "Innovation time"
+    ],
+    "openPositions": 4
+  },
+  {
+    "Id": 5,
+    "name": "BrandBoost Agency",
+    "logo": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=100&h=100&fit=crop&crop=entropy",
+    "industry": "Marketing & Advertising",
+    "size": "30-50 employees",
+    "description": "BrandBoost Agency is a full-service digital marketing agency that helps brands tell their stories and connect with their audiences across all digital channels.",
+    "culture": "We're passionate about helping brands succeed. Our collaborative culture brings together strategists, creatives, and analysts to deliver campaigns that drive real results.",
+    "benefits": [
+      "Performance bonuses",
+      "Health coverage",
+      "Professional development",
+      "Flexible PTO",
+      "Client event access",
+      "Creative workspace"
+    ],
+    "openPositions": 3
+  },
+  {
+    "Id": 6,
+    "name": "DataDriven Analytics",
+    "logo": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=100&h=100&fit=crop&crop=entropy",
+    "industry": "Data & Analytics",
+    "size": "75-150 employees",
+    "description": "DataDriven Analytics helps organizations unlock the power of their data through advanced analytics, machine learning, and AI solutions. We turn data into actionable insights.",
+    "culture": "Data is our language, insights are our currency. We foster a culture of curiosity, analytical thinking, and continuous learning where every team member contributes to solving complex data challenges.",
+    "benefits": [
+      "Equity participation",
+      "Premium benefits",
+      "Learning resources",
+      "Conference speaking",
+      "Research time",
+      "Data science tools"
+    ],
+    "openPositions": 4
+  },
+  {
+    "Id": 7,
+    "name": "Infrastructure Pro",
+    "logo": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=100&h=100&fit=crop&crop=entropy",
+    "industry": "DevOps & Infrastructure",
+    "size": "40-75 employees",
+    "description": "Infrastructure Pro specializes in DevOps consulting and managed infrastructure services. We help companies build reliable, scalable, and secure infrastructure for their applications.",
+    "culture": "Reliability and automation are our pillars. We believe in building systems that work flawlessly and teams that support each other. Continuous improvement is part of our DNA.",
+    "benefits": [
+      "Competitive salary",
+      "Health benefits",
+      "Certification support",
+      "Remote-first policy",
+      "Equipment allowance",
+      "On-call compensation"
+    ],
+    "openPositions": 2
+  },
+  {
+    "Id": 8,
+    "name": "SalesForce Elite",
+    "logo": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=100&h=100&fit=crop&crop=entropy",
+    "industry": "Sales & CRM",
+    "size": "100-300 employees",
+    "description": "SalesForce Elite provides sales training, consulting, and technology solutions to help businesses build high-performing sales teams and processes.",
+    "culture": "Success is a team sport. We believe in supporting each other, celebrating wins together, and learning from every opportunity. Our culture is built on trust, accountability, and results.",
+    "benefits": [
+      "Commission structure",
+      "Sales incentives",
+      "Health insurance",
+      "Sales training",
+      "Travel opportunities",
+      "Recognition programs"
+    ],
+    "openPositions": 6
+  },
+  {
+    "Id": 9,
+    "name": "AppCraft Studios",
+    "logo": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=100&h=100&fit=crop&crop=entropy",
+    "industry": "Mobile Development",
+    "size": "25-50 employees",
+    "description": "AppCraft Studios creates beautiful, functional mobile applications for iOS and Android. We partner with businesses to bring their mobile app ideas to life with exceptional user experiences.",
+    "culture": "Mobile-first mindset drives everything we do. We're passionate about creating apps that users love and businesses depend on. Innovation, quality, and user experience are our top priorities.",
+    "benefits": [
+      "Device allowances",
+      "Health coverage",
+      "App store credits",
+      "Design software",
+      "Flexible hours",
+      "Launch celebrations"
+    ],
+    "openPositions": 3
+  },
+  {
+    "Id": 10,
+    "name": "ClientCare Solutions",
+    "logo": "https://images.unsplash.com/photo-1552581234-26160f608093?w=100&h=100&fit=crop&crop=entropy",
+    "industry": "Customer Success",
+    "size": "60-120 employees",
+    "description": "ClientCare Solutions helps SaaS companies build world-class customer success programs that drive retention, expansion, and customer satisfaction.",
+    "culture": "Customer obsession is our core value. We believe that successful customers lead to successful businesses. Our team is dedicated to creating exceptional customer experiences at every touchpoint.",
+    "benefits": [
+      "Base plus incentives",
+      "Comprehensive health",
+      "Customer success tools",
+      "Professional development",
+      "Work from anywhere",
+      "Customer appreciation events"
+    ],
+    "openPositions": 2
+  }
+]

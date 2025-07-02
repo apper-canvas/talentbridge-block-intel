@@ -1,0 +1,60 @@
+[
+  {
+    "Id": 1,
+    "name": "John Doe",
+    "email": "john.doe@email.com",
+    "phone": "+1 (555) 123-4567",
+    "resume": "john_doe_resume.pdf",
+    "skills": ["JavaScript", "React", "Node.js", "Python", "SQL"],
+    "experience": [
+      {
+        "title": "Senior Frontend Developer",
+        "company": "Tech Solutions Inc.",
+        "duration": "2021 - Present",
+        "description": "Lead frontend development for multiple client projects using React and modern web technologies."
+      },
+      {
+        "title": "Frontend Developer",
+        "company": "Digital Agency",
+        "duration": "2019 - 2021",
+        "description": "Developed responsive web applications and collaborated with design teams."
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Science",
+        "school": "University of Technology",
+        "year": "2019",
+        "field": "Computer Science"
+      }
+    ],
+    "preferredLocation": "San Francisco, CA",
+    "expectedSalary": 120000
+  },
+  {
+    "Id": 2,
+    "name": "Sarah Johnson",
+    "email": "sarah.johnson@email.com",
+    "phone": "+1 (555) 234-5678",
+    "resume": "sarah_johnson_resume.pdf",
+    "skills": ["Product Management", "Agile", "Analytics", "Strategy", "Leadership"],
+    "experience": [
+      {
+        "title": "Product Manager",
+        "company": "Growth Startup",
+        "duration": "2020 - Present",
+        "description": "Led product strategy and roadmap for B2B SaaS platform serving 10k+ users."
+      }
+    ],
+    "education": [
+      {
+        "degree": "MBA",
+        "school": "Business School",
+        "year": "2020",
+        "field": "Business Administration"
+      }
+    ],
+    "preferredLocation": "New York, NY",
+    "expectedSalary": 130000
+  }
+]

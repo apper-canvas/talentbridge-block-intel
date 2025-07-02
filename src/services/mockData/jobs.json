@@ -1,0 +1,242 @@
+[
+  {
+    "Id": 1,
+    "title": "Senior Frontend Developer",
+    "company": {
+      "Id": 1,
+      "name": "TechFlow Solutions",
+      "logo": "https://images.unsplash.com/photo-1549924231-f129b911e442?w=100&h=100&fit=crop&crop=entropy"
+    },
+    "location": "San Francisco, CA",
+    "salaryRange": {
+      "min": 120000,
+      "max": 160000
+    },
+    "type": "Full-time",
+    "description": "We're looking for a Senior Frontend Developer to join our growing team. You'll be responsible for building modern, responsive web applications using React and other cutting-edge technologies. This is a great opportunity to work on exciting projects with a talented team of engineers.",
+    "requirements": [
+      "5+ years of experience with React and modern JavaScript",
+      "Strong understanding of HTML, CSS, and responsive design",
+      "Experience with state management libraries (Redux, Context API)",
+      "Familiarity with testing frameworks (Jest, Cypress)",
+      "Excellent communication and collaboration skills"
+    ],
+    "postedDate": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 2,
+    "title": "Product Manager",
+    "company": {
+      "Id": 2,
+      "name": "InnovateCorp",
+      "logo": "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=100&h=100&fit=crop&crop=entropy"
+    },
+    "location": "New York, NY",
+    "salaryRange": {
+      "min": 110000,
+      "max": 140000
+    },
+    "type": "Full-time",
+    "description": "Join our product team as a Product Manager where you'll drive the development of innovative solutions that delight our customers. You'll work closely with engineering, design, and business stakeholders to define product strategy and roadmap.",
+    "requirements": [
+      "4+ years of product management experience",
+      "Strong analytical and problem-solving skills",
+      "Experience with agile development methodologies",
+      "Excellent communication and leadership abilities",
+      "Data-driven approach to decision making"
+    ],
+    "postedDate": "2024-01-14T14:30:00Z"
+  },
+  {
+    "Id": 3,
+    "title": "UX Designer",
+    "company": {
+      "Id": 3,
+      "name": "DesignStudio Plus",
+      "logo": "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=100&h=100&fit=crop&crop=entropy"
+    },
+    "location": "Remote",
+    "salaryRange": {
+      "min": 85000,
+      "max": 110000
+    },
+    "type": "Remote",
+    "description": "We're seeking a talented UX Designer to help us create exceptional user experiences across our digital products. You'll conduct user research, create wireframes and prototypes, and collaborate with cross-functional teams to bring designs to life.",
+    "requirements": [
+      "3+ years of UX design experience",
+      "Proficiency in design tools (Figma, Sketch, Adobe Creative Suite)",
+      "Strong understanding of user-centered design principles",
+      "Experience conducting user research and usability testing",
+      "Portfolio demonstrating end-to-end design process"
+    ],
+    "postedDate": "2024-01-13T09:15:00Z"
+  },
+  {
+    "Id": 4,
+    "title": "Backend Engineer",
+    "company": {
+      "Id": 4,
+      "name": "CloudTech Systems",
+      "logo": "https://images.unsplash.com/photo-1553484771-371a605b060b?w=100&h=100&fit=crop&crop=entropy"
+    },
+    "location": "Austin, TX",
+    "salaryRange": {
+      "min": 100000,
+      "max": 130000
+    },
+    "type": "Full-time",
+    "description": "Join our backend team to build scalable, high-performance systems that power our applications. You'll work with modern technologies and contribute to architectural decisions that impact millions of users.",
+    "requirements": [
+      "4+ years of backend development experience",
+      "Strong knowledge of Python, Go, or Java",
+      "Experience with cloud platforms (AWS, GCP, Azure)",
+      "Understanding of microservices architecture",
+      "Database design and optimization skills"
+    ],
+    "postedDate": "2024-01-12T16:45:00Z"
+  },
+  {
+    "Id": 5,
+    "title": "Marketing Specialist",
+    "company": {
+      "Id": 5,
+      "name": "BrandBoost Agency",
+      "logo": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=100&h=100&fit=crop&crop=entropy"
+    },
+    "location": "Los Angeles, CA",
+    "salaryRange": {
+      "min": 65000,
+      "max": 85000
+    },
+    "type": "Full-time",
+    "description": "We're looking for a creative Marketing Specialist to develop and execute marketing campaigns that drive brand awareness and customer acquisition. You'll work across digital channels and collaborate with our creative team.",
+    "requirements": [
+      "2+ years of digital marketing experience",
+      "Knowledge of SEO, SEM, and social media marketing",
+      "Experience with marketing automation tools",
+      "Strong writing and content creation skills",
+      "Analytics and reporting experience"
+    ],
+    "postedDate": "2024-01-11T11:20:00Z"
+  },
+  {
+    "Id": 6,
+    "title": "Data Scientist",
+    "company": {
+      "Id": 6,
+      "name": "DataDriven Analytics",
+      "logo": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=100&h=100&fit=crop&crop=entropy"
+    },
+    "location": "Seattle, WA",
+    "salaryRange": {
+      "min": 115000,
+      "max": 145000
+    },
+    "type": "Full-time",
+    "description": "Join our data science team to build predictive models and extract insights from large datasets. You'll work on challenging problems across various domains and help drive data-informed decision making.",
+    "requirements": [
+      "Master's degree in Data Science, Statistics, or related field",
+      "3+ years of experience with Python and R",
+      "Strong knowledge of machine learning algorithms",
+      "Experience with big data technologies (Spark, Hadoop)",
+      "Excellent communication skills for presenting findings"
+    ],
+    "postedDate": "2024-01-10T13:00:00Z"
+  },
+  {
+    "Id": 7,
+    "title": "DevOps Engineer",
+    "company": {
+      "Id": 7,
+      "name": "Infrastructure Pro",
+      "logo": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=100&h=100&fit=crop&crop=entropy"
+    },
+    "location": "Denver, CO",
+    "salaryRange": {
+      "min": 105000,
+      "max": 135000
+    },
+    "type": "Full-time",
+    "description": "We're seeking a DevOps Engineer to help us build and maintain robust, scalable infrastructure. You'll work with containerization, CI/CD pipelines, and cloud technologies to ensure smooth deployments and operations.",
+    "requirements": [
+      "3+ years of DevOps or infrastructure experience",
+      "Strong knowledge of Docker and Kubernetes",
+      "Experience with CI/CD tools (Jenkins, GitLab CI, GitHub Actions)",
+      "Cloud platform expertise (AWS, Azure, GCP)",
+      "Infrastructure as Code experience (Terraform, CloudFormation)"
+    ],
+    "postedDate": "2024-01-09T08:30:00Z"
+  },
+  {
+    "Id": 8,
+    "title": "Sales Representative",
+    "company": {
+      "Id": 8,
+      "name": "SalesForce Elite",
+      "logo": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=100&h=100&fit=crop&crop=entropy"
+    },
+    "location": "Chicago, IL",
+    "salaryRange": {
+      "min": 55000,
+      "max": 75000
+    },
+    "type": "Full-time",
+    "description": "Join our sales team to drive revenue growth by building relationships with prospects and customers. You'll be responsible for the full sales cycle from lead generation to closing deals.",
+    "requirements": [
+      "2+ years of B2B sales experience",
+      "Strong communication and negotiation skills",
+      "CRM experience (Salesforce, HubSpot)",
+      "Goal-oriented with a track record of meeting targets",
+      "Bachelor's degree preferred"
+    ],
+    "postedDate": "2024-01-08T15:10:00Z"
+  },
+  {
+    "Id": 9,
+    "title": "Mobile App Developer",
+    "company": {
+      "Id": 9,
+      "name": "AppCraft Studios",
+      "logo": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=100&h=100&fit=crop&crop=entropy"
+    },
+    "location": "Miami, FL",
+    "salaryRange": {
+      "min": 90000,
+      "max": 120000
+    },
+    "type": "Full-time",
+    "description": "We're looking for a Mobile App Developer to create amazing mobile experiences for iOS and Android platforms. You'll work on both native and cross-platform applications using modern development frameworks.",
+    "requirements": [
+      "3+ years of mobile development experience",
+      "Proficiency in Swift/Objective-C or Kotlin/Java",
+      "Experience with React Native or Flutter",
+      "Understanding of mobile UI/UX principles",
+      "App Store and Google Play publishing experience"
+    ],
+    "postedDate": "2024-01-07T12:45:00Z"
+  },
+  {
+    "Id": 10,
+    "title": "Customer Success Manager",
+    "company": {
+      "Id": 10,
+      "name": "ClientCare Solutions",
+      "logo": "https://images.unsplash.com/photo-1552581234-26160f608093?w=100&h=100&fit=crop&crop=entropy"
+    },
+    "location": "Portland, OR",
+    "salaryRange": {
+      "min": 70000,
+      "max": 90000
+    },
+    "type": "Full-time",
+    "description": "Join our customer success team to ensure our clients achieve their goals and maximize value from our products. You'll build strong relationships, drive adoption, and identify opportunities for growth.",
+    "requirements": [
+      "3+ years of customer success or account management experience",
+      "Strong relationship building and communication skills",
+      "SaaS industry experience preferred",
+      "Data analysis and reporting capabilities",
+      "Problem-solving mindset with customer-first approach"
+    ],
+    "postedDate": "2024-01-06T10:15:00Z"
+  }
+]

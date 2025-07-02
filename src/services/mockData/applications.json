@@ -1,0 +1,47 @@
+[
+  {
+    "Id": 1,
+    "jobId": 1,
+    "candidateId": 1,
+    "status": "submitted",
+    "appliedDate": "2024-01-16T09:30:00Z",
+    "coverLetter": "I am excited to apply for the Senior Frontend Developer position at TechFlow Solutions. With over 5 years of experience in React development, I believe I would be a great fit for your team.",
+    "resumeVersion": "john_doe_resume_v2.pdf"
+  },
+  {
+    "Id": 2,
+    "jobId": 3,
+    "candidateId": 1,
+    "status": "reviewed",
+    "appliedDate": "2024-01-14T14:15:00Z",
+    "coverLetter": "The UX Designer role at DesignStudio Plus aligns perfectly with my passion for creating user-centered designs.",
+    "resumeVersion": "john_doe_resume_v2.pdf"
+  },
+  {
+    "Id": 3,
+    "jobId": 2,
+    "candidateId": 2,
+    "status": "interview",
+    "appliedDate": "2024-01-15T11:45:00Z",
+    "coverLetter": "I'm interested in bringing my product management experience to InnovateCorp's growing product team.",
+    "resumeVersion": "sarah_johnson_resume_v1.pdf"
+  },
+  {
+    "Id": 4,
+    "jobId": 5,
+    "candidateId": 1,
+    "status": "rejected",
+    "appliedDate": "2024-01-12T16:20:00Z",
+    "coverLetter": "While my background is primarily in development, I'm interested in transitioning to marketing and believe my technical skills would be valuable.",
+    "resumeVersion": "john_doe_resume_v1.pdf"
+  },
+  {
+    "Id": 5,
+    "jobId": 10,
+    "candidateId": 2,
+    "status": "offered",
+    "appliedDate": "2024-01-10T10:30:00Z",
+    "coverLetter": "The Customer Success Manager role represents an exciting opportunity to combine my business acumen with my passion for helping customers succeed.",
+    "resumeVersion": "sarah_johnson_resume_v2.pdf"
+  }
+]
