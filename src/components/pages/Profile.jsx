@@ -21,7 +21,7 @@ const Profile = () => {
     expectedSalary: ''
   });
   const [loading, setLoading] = useState(false);
-  const [newSkill, setNewSkill] = useState('');
+const [newSkill, setNewSkill] = useState('');
   const [newExperience, setNewExperience] = useState({
     title: '',
     company: '',
@@ -35,6 +35,8 @@ const Profile = () => {
     field: ''
   });
   const [activeTab, setActiveTab] = useState('personal');
+  const [selectedTemplate, setSelectedTemplate] = useState('classic');
+  const [isExporting, setIsExporting] = useState(false);
 
   useEffect(() => {
     loadProfile();
@@ -152,12 +154,257 @@ const Profile = () => {
     }));
   };
 
-  const tabs = [
+const tabs = [
     { id: 'personal', label: 'Personal Info', icon: 'User' },
     { id: 'skills', label: 'Skills', icon: 'Star' },
     { id: 'experience', label: 'Experience', icon: 'Briefcase' },
-    { id: 'education', label: 'Education', icon: 'GraduationCap' }
+    { id: 'education', label: 'Education', icon: 'GraduationCap' },
+    { id: 'resume', label: 'Resume Builder', icon: 'FileText' }
   ];
+
+  const templates = [
+    {
+      id: 'classic',
+      name: 'Classic',
+      description: 'Clean and professional layout',
+      preview: 'bg-white border-2 border-gray-200'
+    },
+    {
+      id: 'modern',
+      name: 'Modern',
+      description: 'Contemporary design with accent colors',
+      preview: 'bg-gradient-to-br from-primary-50 to-secondary-50 border-2 border-primary-200'
+    },
+    {
+      id: 'creative',
+      name: 'Creative',
+      description: 'Bold design for creative professionals',
+      preview: 'bg-gradient-to-br from-secondary-50 to-accent-50 border-2 border-secondary-200'
+    }
+  ];
+
+  const handleExportResume = async () => {
+    try {
+      setIsExporting(true);
+      // Mock PDF generation
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      toast.success('Resume exported successfully!');
+      
+      // Simulate download
+      const link = document.createElement('a');
+      link.href = '#';
+      link.download = `${profile.name.replace(/\s+/g, '_')}_Resume_${selectedTemplate}.pdf`;
+      link.click();
+    } catch (err) {
+      toast.error('Failed to export resume. Please try again.');
+      console.error('Error exporting resume:', err);
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
+  const renderResumePreview = () => {
+    const selectedTemplateData = templates.find(t => t.id === selectedTemplate);
+    
+    if (selectedTemplate === 'classic') {
+      return (
+        <div className="bg-white p-8 shadow-lg rounded-lg border">
+          <div className="text-center mb-6 pb-4 border-b-2 border-gray-200">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">{profile.name}</h1>
+            <div className="text-gray-600 space-y-1">
+              <p>{profile.email} • {profile.phone}</p>
+              <p>{profile.preferredLocation}</p>
+            </div>
+          </div>
+          
+          {profile.skills.length > 0 && (
+            <div className="mb-6">
+              <h2 className="text-xl font-semibold text-gray-900 mb-3 border-b border-gray-300 pb-1">Skills</h2>
+              <div className="flex flex-wrap gap-2">
+                {profile.skills.map((skill, index) => (
+                  <span key={index} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          {profile.experience.length > 0 && (
+            <div className="mb-6">
+              <h2 className="text-xl font-semibold text-gray-900 mb-3 border-b border-gray-300 pb-1">Experience</h2>
+              {profile.experience.map((exp, index) => (
+                <div key={index} className="mb-4">
+                  <div className="flex justify-between items-start mb-1">
+                    <h3 className="font-semibold text-gray-900">{exp.title}</h3>
+                    <span className="text-gray-600 text-sm">{exp.duration}</span>
+                  </div>
+                  <p className="text-gray-700 font-medium mb-2">{exp.company}</p>
+                  <p className="text-gray-600 text-sm">{exp.description}</p>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {profile.education.length > 0 && (
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3 border-b border-gray-300 pb-1">Education</h2>
+              {profile.education.map((edu, index) => (
+                <div key={index} className="mb-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="font-semibold text-gray-900">{edu.degree}</h3>
+                      <p className="text-gray-700">{edu.school}</p>
+                      <p className="text-gray-600 text-sm">{edu.field}</p>
+                    </div>
+                    <span className="text-gray-600 text-sm">{edu.year}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      );
+    }
+    
+    if (selectedTemplate === 'modern') {
+      return (
+        <div className="bg-white p-8 shadow-lg rounded-lg border-l-4 border-primary-500">
+          <div className="mb-6">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">{profile.name}</h1>
+            <div className="text-primary-600 font-medium mb-4">
+              {profile.email} • {profile.phone} • {profile.preferredLocation}
+            </div>
+          </div>
+          
+          {profile.skills.length > 0 && (
+            <div className="mb-6">
+              <h2 className="text-xl font-semibold text-primary-700 mb-3 flex items-center">
+                <div className="w-4 h-4 bg-primary-500 rounded-full mr-2"></div>
+                Skills
+              </h2>
+              <div className="grid grid-cols-2 gap-2">
+                {profile.skills.map((skill, index) => (
+                  <span key={index} className="px-3 py-1 bg-primary-50 text-primary-700 rounded-lg text-sm font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          {profile.experience.length > 0 && (
+            <div className="mb-6">
+              <h2 className="text-xl font-semibold text-primary-700 mb-3 flex items-center">
+                <div className="w-4 h-4 bg-primary-500 rounded-full mr-2"></div>
+                Experience
+              </h2>
+              {profile.experience.map((exp, index) => (
+                <div key={index} className="mb-4 pl-4 border-l-2 border-primary-200">
+                  <div className="flex justify-between items-start mb-1">
+                    <h3 className="font-semibold text-gray-900">{exp.title}</h3>
+                    <span className="text-primary-600 font-medium text-sm">{exp.duration}</span>
+                  </div>
+                  <p className="text-primary-700 font-medium mb-2">{exp.company}</p>
+                  <p className="text-gray-600 text-sm">{exp.description}</p>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {profile.education.length > 0 && (
+            <div>
+              <h2 className="text-xl font-semibold text-primary-700 mb-3 flex items-center">
+                <div className="w-4 h-4 bg-primary-500 rounded-full mr-2"></div>
+                Education
+              </h2>
+              {profile.education.map((edu, index) => (
+                <div key={index} className="mb-3 pl-4 border-l-2 border-primary-200">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="font-semibold text-gray-900">{edu.degree}</h3>
+                      <p className="text-primary-700 font-medium">{edu.school}</p>
+                      <p className="text-gray-600 text-sm">{edu.field}</p>
+                    </div>
+                    <span className="text-primary-600 font-medium text-sm">{edu.year}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      );
+    }
+    
+    if (selectedTemplate === 'creative') {
+      return (
+        <div className="bg-gradient-to-br from-secondary-50 to-accent-50 p-8 shadow-lg rounded-lg">
+          <div className="bg-white rounded-lg p-6 mb-6 shadow-md">
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent mb-2">
+              {profile.name}
+            </h1>
+            <div className="text-gray-700 space-y-1">
+              <p className="font-medium">{profile.email} • {profile.phone}</p>
+              <p className="text-secondary-600">{profile.preferredLocation}</p>
+            </div>
+          </div>
+          
+          {profile.skills.length > 0 && (
+            <div className="bg-white rounded-lg p-6 mb-6 shadow-md">
+              <h2 className="text-2xl font-bold text-secondary-700 mb-4">Skills</h2>
+              <div className="grid grid-cols-3 gap-2">
+                {profile.skills.map((skill, index) => (
+                  <span key={index} className="px-3 py-2 bg-gradient-to-r from-secondary-100 to-accent-100 text-secondary-700 rounded-full text-sm font-semibold text-center">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          {profile.experience.length > 0 && (
+            <div className="bg-white rounded-lg p-6 mb-6 shadow-md">
+              <h2 className="text-2xl font-bold text-secondary-700 mb-4">Experience</h2>
+              {profile.experience.map((exp, index) => (
+                <div key={index} className="mb-4 p-4 bg-gradient-to-r from-secondary-50 to-accent-50 rounded-lg">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-bold text-gray-900 text-lg">{exp.title}</h3>
+                    <span className="bg-secondary-100 text-secondary-700 px-3 py-1 rounded-full text-sm font-medium">
+                      {exp.duration}
+                    </span>
+                  </div>
+                  <p className="text-secondary-700 font-semibold mb-2">{exp.company}</p>
+                  <p className="text-gray-600">{exp.description}</p>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {profile.education.length > 0 && (
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <h2 className="text-2xl font-bold text-secondary-700 mb-4">Education</h2>
+              {profile.education.map((edu, index) => (
+                <div key={index} className="mb-4 p-4 bg-gradient-to-r from-secondary-50 to-accent-50 rounded-lg">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="font-bold text-gray-900">{edu.degree}</h3>
+                      <p className="text-secondary-700 font-semibold">{edu.school}</p>
+                      <p className="text-gray-600">{edu.field}</p>
+                    </div>
+                    <span className="bg-secondary-100 text-secondary-700 px-3 py-1 rounded-full text-sm font-medium">
+                      {edu.year}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      );
+    }
+    
+    return null;
+  };
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -469,6 +716,130 @@ const Profile = () => {
                     No education added yet. Add your first qualification above.
                   </p>
                 )}
+              </motion.div>
+)}
+
+            {/* Resume Builder Tab */}
+            {activeTab === 'resume' && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="space-y-6"
+              >
+                <div className="flex justify-between items-center">
+                  <h2 className="text-2xl font-semibold text-gray-900">
+                    Resume Builder
+                  </h2>
+                  <Button
+                    variant="primary"
+                    onClick={handleExportResume}
+                    loading={isExporting}
+                    icon="Download"
+                  >
+                    {isExporting ? 'Exporting...' : 'Export PDF'}
+                  </Button>
+                </div>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Template Selection */}
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                        Choose Template
+                      </h3>
+                      <div className="grid grid-cols-1 gap-4">
+                        {templates.map((template) => (
+                          <div
+                            key={template.id}
+                            onClick={() => setSelectedTemplate(template.id)}
+                            className={`p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 ${
+                              selectedTemplate === template.id
+                                ? 'border-primary-500 bg-primary-50 shadow-md'
+                                : 'border-gray-200 hover:border-gray-300 hover:shadow-sm'
+                            }`}
+                          >
+                            <div className="flex items-center space-x-4">
+                              <div className={`w-16 h-20 rounded-lg ${template.preview} flex items-center justify-center`}>
+                                <ApperIcon name="FileText" size={24} className="text-gray-400" />
+                              </div>
+                              <div className="flex-1">
+                                <h4 className="font-semibold text-gray-900 mb-1">
+                                  {template.name}
+                                </h4>
+                                <p className="text-gray-600 text-sm">
+                                  {template.description}
+                                </p>
+                              </div>
+                              {selectedTemplate === template.id && (
+                                <ApperIcon name="Check" size={20} className="text-primary-600" />
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                      <div className="flex items-start space-x-3">
+                        <ApperIcon name="Info" size={20} className="text-blue-600 mt-0.5" />
+                        <div>
+                          <h4 className="font-medium text-blue-900 mb-1">
+                            Live Preview
+                          </h4>
+                          <p className="text-blue-700 text-sm">
+                            Your resume updates automatically as you modify your profile information. 
+                            Make sure to fill out all sections for the best results.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <h4 className="font-medium text-gray-900">Resume Actions</h4>
+                      <div className="grid grid-cols-2 gap-3">
+                        <Button
+                          variant="outline"
+                          onClick={() => toast.info('Print functionality coming soon!')}
+                          icon="Printer"
+                          size="small"
+                        >
+                          Print
+                        </Button>
+                        <Button
+                          variant="outline"
+                          onClick={() => toast.info('Share functionality coming soon!')}
+                          icon="Share2"
+                          size="small"
+                        >
+                          Share
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Live Preview */}
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-lg font-semibold text-gray-900">
+                        Live Preview
+                      </h3>
+                      <div className="flex items-center space-x-2 text-sm text-gray-600">
+                        <ApperIcon name="Eye" size={16} />
+                        <span>Real-time updates</span>
+                      </div>
+                    </div>
+                    
+                    <div className="border-2 border-gray-200 rounded-lg bg-gray-50 p-4 max-h-[800px] overflow-y-auto">
+                      <div className="transform scale-75 origin-top">
+                        {renderResumePreview()}
+                      </div>
+                    </div>
+                    
+                    <div className="text-center text-sm text-gray-500">
+                      Preview is scaled to 75% for better viewing
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             )}
 
