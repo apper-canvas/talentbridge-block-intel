@@ -254,7 +254,7 @@ const handleExportResume = async () => {
     }
   };
 
-  const handleShare = async () => {
+const handleShare = async () => {
     try {
       const shareData = {
         title: `${profile.name}'s Resume`,
@@ -266,31 +266,68 @@ const handleExportResume = async () => {
       if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
         await navigator.share(shareData);
         toast.success('Resume shared successfully!');
-      } else {
-        // Fallback to clipboard
-        const shareUrl = window.location.href;
-        const shareText = `Check out ${profile.name}'s professional resume: ${shareUrl}`;
-        
-        if (navigator.clipboard && navigator.clipboard.writeText) {
+        return;
+      }
+
+      // Fallback to clipboard with permission check
+      const shareUrl = window.location.href;
+      const shareText = `Check out ${profile.name}'s professional resume: ${shareUrl}`;
+      
+      // Try clipboard API with proper permission handling
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        try {
+          // Check clipboard permissions if available
+          if (navigator.permissions) {
+            const permission = await navigator.permissions.query({ name: 'clipboard-write' });
+            if (permission.state === 'denied') {
+              throw new Error('Clipboard permission denied');
+            }
+          }
+          
           await navigator.clipboard.writeText(shareText);
           toast.success('Resume link copied to clipboard!');
-        } else {
-          // Fallback for older browsers
-          const textArea = document.createElement('textarea');
-          textArea.value = shareText;
-          document.body.appendChild(textArea);
-          textArea.select();
-          document.execCommand('copy');
-          document.body.removeChild(textArea);
-          toast.success('Resume link copied to clipboard!');
+          return;
+        } catch (clipboardError) {
+          // If clipboard fails due to permissions or other issues, fall back to textarea
+          console.warn('Clipboard API failed, using fallback:', clipboardError);
         }
+      }
+
+      // Reliable fallback for all cases
+      try {
+        const textArea = document.createElement('textarea');
+        textArea.value = shareText;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        textArea.style.top = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        if (successful) {
+          toast.success('Resume link copied to clipboard!');
+        } else {
+          throw new Error('Copy command failed');
+        }
+      } catch (fallbackError) {
+        console.error('All copy methods failed:', fallbackError);
+        toast.error('Unable to copy link. Please copy manually: ' + shareUrl);
       }
     } catch (err) {
       if (err.name === 'AbortError') {
         // User cancelled share dialog
         return;
       }
-      toast.error('Failed to share resume. Please try again.');
+      
+      // Handle specific error types
+      if (err.name === 'NotAllowedError' || err.message.includes('permission')) {
+        toast.error('Clipboard access blocked. Please copy the URL manually.');
+      } else {
+        toast.error('Failed to share resume. Please try again.');
+      }
       console.error('Error sharing resume:', err);
     }
   };
