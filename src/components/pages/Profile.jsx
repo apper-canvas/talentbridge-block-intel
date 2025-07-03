@@ -94,6 +94,39 @@ const [newSkill, setNewSkill] = useState('');
     } finally {
       setLoading(false);
     }
+};
+
+  const handleResumeUpload = (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    // Validate file type
+    const allowedTypes = [
+      'application/pdf',
+      'application/msword',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ];
+    
+    if (!allowedTypes.includes(file.type)) {
+      toast.error('Please upload a PDF, DOC, or DOCX file.');
+      event.target.value = ''; // Reset file input
+      return;
+    }
+
+    // Validate file size (5MB limit)
+    const maxSize = 5 * 1024 * 1024; // 5MB in bytes
+    if (file.size > maxSize) {
+      toast.error('File size must be less than 5MB.');
+      event.target.value = ''; // Reset file input
+      return;
+    }
+
+    // Update profile with new resume
+    handleInputChange('resume', file.name);
+    toast.success('Resume uploaded successfully!');
+    
+    // Reset file input for future uploads
+    event.target.value = '';
   };
 
   const handleInputChange = (field, value) => {
@@ -634,7 +667,7 @@ const handleShare = async () => {
                   />
                 </div>
 
-                <div>
+<div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Resume
                   </label>
@@ -643,7 +676,21 @@ const handleShare = async () => {
                     <p className="text-gray-600 mb-2">
                       {profile.resume ? `Current: ${profile.resume}` : 'Upload your resume'}
                     </p>
-                    <Button variant="outline" size="small">
+                    <p className="text-xs text-gray-500 mb-4">
+                      Supported formats: PDF, DOC, DOCX (max 5MB)
+                    </p>
+                    <input
+                      type="file"
+                      id="resumeUpload"
+                      accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                      onChange={handleResumeUpload}
+                      className="hidden"
+                    />
+                    <Button 
+                      variant="outline" 
+                      size="small"
+                      onClick={() => document.getElementById('resumeUpload').click()}
+                    >
                       {profile.resume ? 'Replace Resume' : 'Upload Resume'}
                     </Button>
                   </div>
