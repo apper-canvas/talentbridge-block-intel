@@ -183,7 +183,7 @@ const tabs = [
     }
   ];
 
-  const handleExportResume = async () => {
+const handleExportResume = async () => {
     try {
       setIsExporting(true);
       // Mock PDF generation
@@ -200,6 +200,98 @@ const tabs = [
       console.error('Error exporting resume:', err);
     } finally {
       setIsExporting(false);
+    }
+  };
+
+  const handlePrint = () => {
+    try {
+      // Add print-specific styles
+      const printStyles = `
+        @media print {
+          body * {
+            visibility: hidden;
+          }
+          .resume-preview, .resume-preview * {
+            visibility: visible;
+          }
+          .resume-preview {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100% !important;
+            height: auto !important;
+            transform: none !important;
+            scale: 1 !important;
+            margin: 0 !important;
+            padding: 20px !important;
+            box-shadow: none !important;
+            border: none !important;
+          }
+          .bg-gradient-to-br, .bg-gradient-to-r {
+            background: white !important;
+            -webkit-print-color-adjust: exact;
+          }
+        }
+      `;
+      
+      // Create and inject print styles
+      const styleElement = document.createElement('style');
+      styleElement.textContent = printStyles;
+      document.head.appendChild(styleElement);
+      
+      // Trigger print
+      window.print();
+      
+      // Remove styles after print
+      setTimeout(() => {
+        document.head.removeChild(styleElement);
+      }, 1000);
+      
+      toast.success('Print dialog opened successfully!');
+    } catch (err) {
+      toast.error('Failed to print resume. Please try again.');
+      console.error('Error printing resume:', err);
+    }
+  };
+
+  const handleShare = async () => {
+    try {
+      const shareData = {
+        title: `${profile.name}'s Resume`,
+        text: `Check out ${profile.name}'s professional resume`,
+        url: window.location.href
+      };
+
+      // Check if Web Share API is supported
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        await navigator.share(shareData);
+        toast.success('Resume shared successfully!');
+      } else {
+        // Fallback to clipboard
+        const shareUrl = window.location.href;
+        const shareText = `Check out ${profile.name}'s professional resume: ${shareUrl}`;
+        
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(shareText);
+          toast.success('Resume link copied to clipboard!');
+        } else {
+          // Fallback for older browsers
+          const textArea = document.createElement('textarea');
+          textArea.value = shareText;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+          toast.success('Resume link copied to clipboard!');
+        }
+      }
+    } catch (err) {
+      if (err.name === 'AbortError') {
+        // User cancelled share dialog
+        return;
+      }
+      toast.error('Failed to share resume. Please try again.');
+      console.error('Error sharing resume:', err);
     }
   };
 
@@ -794,12 +886,12 @@ const tabs = [
                       </div>
                     </div>
                     
-                    <div className="space-y-3">
+<div className="space-y-3">
                       <h4 className="font-medium text-gray-900">Resume Actions</h4>
                       <div className="grid grid-cols-2 gap-3">
                         <Button
                           variant="outline"
-                          onClick={() => toast.info('Print functionality coming soon!')}
+                          onClick={handlePrint}
                           icon="Printer"
                           size="small"
                         >
@@ -807,7 +899,7 @@ const tabs = [
                         </Button>
                         <Button
                           variant="outline"
-                          onClick={() => toast.info('Share functionality coming soon!')}
+                          onClick={handleShare}
                           icon="Share2"
                           size="small"
                         >
@@ -829,8 +921,8 @@ const tabs = [
                       </div>
                     </div>
                     
-                    <div className="border-2 border-gray-200 rounded-lg bg-gray-50 p-4 max-h-[800px] overflow-y-auto">
-                      <div className="transform scale-75 origin-top">
+<div className="border-2 border-gray-200 rounded-lg bg-gray-50 p-4 max-h-[800px] overflow-y-auto">
+                      <div className="transform scale-75 origin-top resume-preview">
                         {renderResumePreview()}
                       </div>
                     </div>
