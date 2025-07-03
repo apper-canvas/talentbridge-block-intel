@@ -8,6 +8,7 @@ import MyApplications from '@/components/pages/MyApplications';
 import Profile from '@/components/pages/Profile';
 import Companies from '@/components/pages/Companies';
 import CompanyDetails from '@/components/pages/CompanyDetails';
+import NotificationCenter from '@/components/pages/NotificationCenter';
 
 function App() {
   return (
@@ -15,12 +16,13 @@ function App() {
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
         <Layout>
           <Routes>
-            <Route path="/" element={<JobSearch />} />
+<Route path="/" element={<JobSearch />} />
             <Route path="/jobs" element={<JobSearch />} />
             <Route path="/jobs/:id" element={<JobDetails />} />
             <Route path="/companies" element={<Companies />} />
             <Route path="/companies/:id" element={<CompanyDetails />} />
             <Route path="/applications" element={<MyApplications />} />
+            <Route path="/notifications" element={<NotificationCenter />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </Layout>

@@ -1,0 +1,98 @@
+[
+  {
+    "Id": 1,
+    "type": "application",
+    "title": "Application Status Update",
+    "message": "Your application for Senior Frontend Developer at Tech Solutions Inc. has been reviewed and moved to the interview stage.",
+    "read": false,
+    "createdAt": "2024-01-15T10:30:00.000Z"
+  },
+  {
+    "Id": 2,
+    "type": "job",
+    "title": "New Job Recommendation",
+    "message": "Based on your profile, we found a perfect match: Full Stack Developer at Innovation Labs. Salary range: $95,000 - $120,000.",
+    "read": false,
+    "createdAt": "2024-01-15T08:15:00.000Z"
+  },
+  {
+    "Id": 3,
+    "type": "application",
+    "title": "Application Submitted Successfully",
+    "message": "Your application for React Developer at StartupXYZ has been submitted successfully. You should hear back within 5-7 business days.",
+    "read": true,
+    "createdAt": "2024-01-14T16:45:00.000Z"
+  },
+  {
+    "Id": 4,
+    "type": "account",
+    "title": "Profile Completeness",
+    "message": "Your profile is 85% complete. Add your work experience to increase your chances of getting noticed by recruiters.",
+    "read": false,
+    "createdAt": "2024-01-14T12:20:00.000Z"
+  },
+  {
+    "Id": 5,
+    "type": "job",
+    "title": "Job Alert: Remote Opportunities",
+    "message": "5 new remote JavaScript developer positions have been posted that match your preferences. Check them out now!",
+    "read": true,
+    "createdAt": "2024-01-13T09:00:00.000Z"
+  },
+  {
+    "Id": 6,
+    "type": "application",
+    "title": "Interview Scheduled",
+    "message": "Great news! GlobalTech Solutions has scheduled a technical interview for the Software Engineer position on January 18th at 2:00 PM.",
+    "read": false,
+    "createdAt": "2024-01-12T14:30:00.000Z"
+  },
+  {
+    "Id": 7,
+    "type": "account",
+    "title": "Security Alert",
+    "message": "Your password was successfully changed. If this wasn't you, please contact our support team immediately.",
+    "read": true,
+    "createdAt": "2024-01-12T11:15:00.000Z"
+  },
+  {
+    "Id": 8,
+    "type": "job",
+    "title": "Company Following Update",
+    "message": "Tech Innovators Corp, a company you're following, just posted 3 new job openings that match your skills.",
+    "read": false,
+    "createdAt": "2024-01-11T15:45:00.000Z"
+  },
+  {
+    "Id": 9,
+    "type": "application",
+    "title": "Application Rejected",
+    "message": "Unfortunately, WebDev Agency has decided not to move forward with your application for Frontend Developer. Keep applying!",
+    "read": true,
+    "createdAt": "2024-01-10T10:00:00.000Z"
+  },
+  {
+    "Id": 10,
+    "type": "account",
+    "title": "Welcome to TalentBridge!",
+    "message": "Your account has been successfully created. Complete your profile to start receiving personalized job recommendations.",
+    "read": true,
+    "createdAt": "2024-01-08T13:22:00.000Z"
+  },
+  {
+    "Id": 11,
+    "type": "job",
+    "title": "Salary Insights Available",
+    "message": "Based on your experience level, the average salary for JavaScript developers in your area is $75,000 - $95,000.",
+    "read": false,
+    "createdAt": "2024-01-07T16:30:00.000Z"
+  },
+  {
+    "Id": 12,
+    "type": "application",
+    "title": "Application Deadline Reminder",
+    "message": "Reminder: The application deadline for Senior Developer at Future Tech is tomorrow. Make sure to submit your application.",
+    "read": true,
+    "createdAt": "2024-01-06T09:15:00.000Z"
+  }
+]

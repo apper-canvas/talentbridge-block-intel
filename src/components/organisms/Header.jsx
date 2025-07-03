@@ -1,21 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '@/components/atoms/Button';
 import SearchBar from '@/components/molecules/SearchBar';
 import ApperIcon from '@/components/ApperIcon';
+import { notificationService } from '@/services/api/notificationService';
 
 const Header = () => {
-  const location = useLocation();
+const location = useLocation();
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [unreadCount, setUnreadCount] = useState(0);
 
-  const navigation = [
+const navigation = [
     { name: 'Jobs', href: '/jobs', icon: 'Briefcase' },
     { name: 'Companies', href: '/companies', icon: 'Building2' },
     { name: 'My Applications', href: '/applications', icon: 'FileText' },
     { name: 'Profile', href: '/profile', icon: 'User' }
   ];
+
+  useEffect(() => {
+    loadUnreadCount();
+  }, []);
+
+  const loadUnreadCount = async () => {
+    try {
+      const notifications = await notificationService.getAll();
+      const unread = notifications.filter(n => !n.read).length;
+      setUnreadCount(unread);
+    } catch (err) {
+      console.error('Error loading notification count:', err);
+    }
+  };
 
   const handleSearch = (query) => {
     navigate(`/jobs?search=${encodeURIComponent(query)}`);
@@ -38,7 +54,7 @@ const Header = () => {
             <SearchBar onSearch={handleSearch} />
           </div>
 
-          {/* Desktop Navigation */}
+{/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
             {navigation.map((item) => (
               <Link
@@ -54,6 +70,23 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Notifications */}
+            <Link
+              to="/notifications"
+              className={`relative flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                location.pathname === '/notifications'
+                  ? 'bg-primary-50 text-primary-700 border-2 border-primary-200'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+              }`}
+            >
+              <ApperIcon name="Bell" size={18} />
+              {unreadCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
+                  {unreadCount > 99 ? '99+' : unreadCount}
+                </span>
+              )}
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -81,7 +114,7 @@ const Header = () => {
           exit={{ opacity: 0, y: -10 }}
           className="md:hidden bg-white border-t border-gray-200"
         >
-          <div className="px-2 pt-2 pb-3 space-y-1">
+<div className="px-2 pt-2 pb-3 space-y-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -97,6 +130,27 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Mobile Notifications */}
+            <Link
+              to="/notifications"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`flex items-center px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                location.pathname === '/notifications'
+                  ? 'bg-primary-50 text-primary-700'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+              }`}
+            >
+              <div className="relative mr-3">
+                <ApperIcon name="Bell" size={20} />
+                {unreadCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center font-medium">
+                    {unreadCount > 9 ? '9+' : unreadCount}
+                  </span>
+                )}
+              </div>
+              Notifications
+            </Link>
           </div>
         </motion.div>
       )}
