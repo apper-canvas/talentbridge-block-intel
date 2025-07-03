@@ -13,9 +13,35 @@
       "Flexible work arrangements",
       "Professional development budget",
       "Unlimited PTO",
-      "Modern office with snacks"
+"Modern office with snacks"
     ],
-    "openPositions": 3
+    "openPositions": 3,
+    "reviews": [
+      {
+        "Id": 1,
+        "rating": 5,
+        "pros": ["Great work-life balance", "Innovative projects", "Supportive team"],
+        "cons": ["Limited parking", "Fast-paced environment"],
+        "overallFeedback": "TechFlow is an amazing place to work. The company culture is fantastic and I've learned so much working here. Management is supportive and encourages professional growth.",
+        "employeeTitle": "Senior Software Engineer",
+        "workDuration": "2 years",
+        "isAnonymous": false,
+        "date": "2024-01-15T10:30:00Z",
+        "helpfulVotes": 8
+      },
+      {
+        "Id": 2,
+        "rating": 4,
+        "pros": ["Competitive salary", "Modern tech stack", "Flexible hours"],
+        "cons": ["Sometimes overwhelming workload", "Limited career advancement"],
+        "overallFeedback": "Overall a solid company to work for. Good benefits and the team is collaborative. There's always something new to learn.",
+        "employeeTitle": "Frontend Developer",
+        "workDuration": "1.5 years",
+        "isAnonymous": true,
+        "date": "2024-01-10T14:20:00Z",
+        "helpfulVotes": 5
+      }
+    ]
   },
   {
     "Id": 2,
@@ -32,8 +58,34 @@
       "Learning stipend",
       "Remote work options",
       "Team building events"
-    ],
-    "openPositions": 5
+],
+    "openPositions": 5,
+    "reviews": [
+      {
+        "Id": 1,
+        "rating": 4,
+        "pros": ["Strong technical challenges", "Good compensation", "Smart colleagues"],
+        "cons": ["Long hours during crunch time", "Complex bureaucracy"],
+        "overallFeedback": "InnovateCorp offers excellent opportunities for growth and learning. The work is challenging and rewarding, though the pace can be intense.",
+        "employeeTitle": "Backend Engineer",
+        "workDuration": "3 years",
+        "isAnonymous": false,
+        "date": "2024-01-12T09:15:00Z",
+        "helpfulVotes": 12
+      },
+      {
+        "Id": 2,
+        "rating": 3,
+        "pros": ["Good benefits", "Stable employment", "Learning opportunities"],
+        "cons": ["Slow decision making", "Limited remote work", "Outdated processes"],
+        "overallFeedback": "It's a decent place to work with good job security, but innovation can be slow due to corporate structure.",
+        "employeeTitle": "Product Manager",
+        "workDuration": "2.5 years",
+        "isAnonymous": true,
+        "date": "2024-01-08T16:45:00Z",
+        "helpfulVotes": 3
+      }
+    ]
   },
   {
     "Id": 3,
@@ -50,8 +102,22 @@
       "Conference attendance",
       "Wellness programs",
       "Pet-friendly office"
-    ],
-    "openPositions": 2
+],
+    "openPositions": 2,
+    "reviews": [
+      {
+        "Id": 1,
+        "rating": 5,
+        "pros": ["Creative freedom", "Inspiring colleagues", "Beautiful office space"],
+        "cons": ["Tight deadlines", "Client pressure"],
+        "overallFeedback": "DesignStudio Plus is a creative paradise. The work is challenging and the team is incredibly talented. Perfect for designers who want to grow.",
+        "employeeTitle": "UX Designer",
+        "workDuration": "1 year",
+        "isAnonymous": false,
+        "date": "2024-01-14T11:30:00Z",
+        "helpfulVotes": 7
+      }
+    ]
   },
   {
     "Id": 4,
@@ -68,8 +134,34 @@
       "Home office setup",
       "Sabbatical program",
       "Innovation time"
-    ],
-    "openPositions": 4
+],
+    "openPositions": 4,
+    "reviews": [
+      {
+        "Id": 1,
+        "rating": 4,
+        "pros": ["Cutting-edge technology", "Strong engineering culture", "Good work-life balance"],
+        "cons": ["Competitive environment", "Limited social activities"],
+        "overallFeedback": "Great company for engineers who love working with the latest technologies. The team is highly skilled and supportive.",
+        "employeeTitle": "DevOps Engineer",
+        "workDuration": "2 years",
+        "isAnonymous": true,
+        "date": "2024-01-11T13:20:00Z",
+        "helpfulVotes": 9
+      },
+      {
+        "Id": 2,
+        "rating": 5,
+        "pros": ["Excellent mentorship", "Modern infrastructure", "Growth opportunities"],
+        "cons": ["On-call rotations", "Complex systems"],
+        "overallFeedback": "CloudTech has been instrumental in my career growth. The technical challenges are rewarding and the team is exceptional.",
+        "employeeTitle": "Senior Cloud Architect",
+        "workDuration": "3.5 years",
+        "isAnonymous": false,
+        "date": "2024-01-09T08:45:00Z",
+        "helpfulVotes": 15
+      }
+    ]
   },
   {
     "Id": 5,
@@ -86,8 +178,22 @@
       "Flexible PTO",
       "Client event access",
       "Creative workspace"
-    ],
-    "openPositions": 3
+],
+    "openPositions": 3,
+    "reviews": [
+      {
+        "Id": 1,
+        "rating": 4,
+        "pros": ["Dynamic environment", "Client variety", "Creative campaigns"],
+        "cons": ["Stressful deadlines", "Client demands", "Long hours"],
+        "overallFeedback": "BrandBoost is perfect for marketers who thrive in fast-paced environments. The work is exciting and diverse.",
+        "employeeTitle": "Digital Marketing Specialist",
+        "workDuration": "1.5 years",
+        "isAnonymous": true,
+        "date": "2024-01-13T15:10:00Z",
+        "helpfulVotes": 6
+      }
+    ]
   },
   {
     "Id": 6,
@@ -104,8 +210,34 @@
       "Conference speaking",
       "Research time",
       "Data science tools"
-    ],
-    "openPositions": 4
+],
+    "openPositions": 4,
+    "reviews": [
+      {
+        "Id": 1,
+        "rating": 5,
+        "pros": ["Data-driven culture", "Advanced tools", "Research opportunities"],
+        "cons": ["Steep learning curve", "High expectations"],
+        "overallFeedback": "DataDriven Analytics is the best place for data scientists. The projects are challenging and the team is world-class.",
+        "employeeTitle": "Data Scientist",
+        "workDuration": "2.5 years",
+        "isAnonymous": false,
+        "date": "2024-01-07T12:00:00Z",
+        "helpfulVotes": 11
+      },
+      {
+        "Id": 2,
+        "rating": 4,
+        "pros": ["Cutting-edge projects", "Great benefits", "Collaborative team"],
+        "cons": ["Complex data infrastructure", "Demanding clients"],
+        "overallFeedback": "Excellent company for analytics professionals. The work is intellectually stimulating and rewarding.",
+        "employeeTitle": "Senior Analytics Engineer",
+        "workDuration": "1 year",
+        "isAnonymous": true,
+        "date": "2024-01-05T17:30:00Z",
+        "helpfulVotes": 4
+      }
+    ]
   },
   {
     "Id": 7,
@@ -122,8 +254,22 @@
       "Remote-first policy",
       "Equipment allowance",
       "On-call compensation"
-    ],
-    "openPositions": 2
+],
+    "openPositions": 2,
+    "reviews": [
+      {
+        "Id": 1,
+        "rating": 4,
+        "pros": ["Remote-first culture", "Good compensation", "Automation focus"],
+        "cons": ["On-call responsibilities", "Complex infrastructure"],
+        "overallFeedback": "Infrastructure Pro offers great flexibility and challenging technical work. Perfect for DevOps professionals.",
+        "employeeTitle": "Site Reliability Engineer",
+        "workDuration": "2 years",
+        "isAnonymous": false,
+        "date": "2024-01-06T10:45:00Z",
+        "helpfulVotes": 8
+      }
+    ]
   },
   {
     "Id": 8,
@@ -140,8 +286,34 @@
       "Sales training",
       "Travel opportunities",
       "Recognition programs"
-    ],
-    "openPositions": 6
+],
+    "openPositions": 6,
+    "reviews": [
+      {
+        "Id": 1,
+        "rating": 3,
+        "pros": ["Good commission structure", "Sales training", "Travel opportunities"],
+        "cons": ["High pressure", "Aggressive targets", "Limited work-life balance"],
+        "overallFeedback": "SalesForce Elite is great for ambitious sales professionals, but the pressure can be intense.",
+        "employeeTitle": "Sales Representative",
+        "workDuration": "1 year",
+        "isAnonymous": true,
+        "date": "2024-01-04T14:15:00Z",
+        "helpfulVotes": 2
+      },
+      {
+        "Id": 2,
+        "rating": 4,
+        "pros": ["Excellent training programs", "Career advancement", "Team support"],
+        "cons": ["Demanding quotas", "Frequent travel"],
+        "overallFeedback": "Great company for building a sales career. The training and mentorship are top-notch.",
+        "employeeTitle": "Senior Sales Manager",
+        "workDuration": "3 years",
+        "isAnonymous": false,
+        "date": "2024-01-02T09:30:00Z",
+        "helpfulVotes": 10
+      }
+    ]
   },
   {
     "Id": 9,
@@ -158,8 +330,22 @@
       "Design software",
       "Flexible hours",
       "Launch celebrations"
-    ],
-    "openPositions": 3
+],
+    "openPositions": 3,
+    "reviews": [
+      {
+        "Id": 1,
+        "rating": 5,
+        "pros": ["Mobile-first approach", "Creative projects", "Flexible schedule"],
+        "cons": ["App store dependencies", "Client expectations"],
+        "overallFeedback": "AppCraft Studios is perfect for mobile developers who want to work on innovative apps with creative freedom.",
+        "employeeTitle": "iOS Developer",
+        "workDuration": "1.5 years",
+        "isAnonymous": false,
+        "date": "2024-01-03T11:20:00Z",
+        "helpfulVotes": 6
+      }
+    ]
   },
   {
     "Id": 10,
@@ -176,7 +362,21 @@
       "Professional development",
       "Work from anywhere",
       "Customer appreciation events"
-    ],
-    "openPositions": 2
+],
+    "openPositions": 2,
+    "reviews": [
+      {
+        "Id": 1,
+        "rating": 4,
+        "pros": ["Customer-focused culture", "Remote work options", "Professional development"],
+        "cons": ["Dealing with difficult customers", "Metrics pressure"],
+        "overallFeedback": "ClientCare Solutions is excellent for customer success professionals. The company truly cares about both employees and customers.",
+        "employeeTitle": "Customer Success Manager",
+        "workDuration": "2 years",
+        "isAnonymous": true,
+        "date": "2024-01-01T16:00:00Z",
+        "helpfulVotes": 7
+      }
+    ]
   }
 ]

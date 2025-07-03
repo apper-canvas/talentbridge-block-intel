@@ -12,6 +12,7 @@ const Input = ({
   disabled = false,
   required = false,
   className = '',
+  rows = 3,
   ...props 
 }) => {
   const inputId = `input-${Math.random().toString(36).substr(2, 9)}`;
@@ -31,22 +32,39 @@ const Input = ({
             <ApperIcon name={icon} size={20} className="text-gray-400" />
           </div>
         )}
-        
-        <input
-          id={inputId}
-          type={type}
-          placeholder={placeholder}
-          value={value}
-          onChange={onChange}
-          disabled={disabled}
-          className={`
-            input-field
-            ${icon ? 'pl-10' : ''}
-            ${error ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}
-            ${disabled ? 'bg-gray-50 cursor-not-allowed' : ''}
-          `}
-          {...props}
-        />
+{type === 'textarea' ? (
+          <textarea
+            id={inputId}
+            placeholder={placeholder}
+            value={value}
+            onChange={onChange}
+            disabled={disabled}
+            rows={rows}
+            className={`
+              input-field
+              resize-vertical
+              ${error ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}
+              ${disabled ? 'bg-gray-50 cursor-not-allowed' : ''}
+            `}
+            {...props}
+          />
+        ) : (
+          <input
+            id={inputId}
+            type={type}
+            placeholder={placeholder}
+            value={value}
+            onChange={onChange}
+            disabled={disabled}
+            className={`
+              input-field
+              ${icon ? 'pl-10' : ''}
+              ${error ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}
+              ${disabled ? 'bg-gray-50 cursor-not-allowed' : ''}
+            `}
+            {...props}
+          />
+        )}
       </div>
       
       {error && (
