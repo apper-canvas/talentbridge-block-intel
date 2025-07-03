@@ -99,10 +99,9 @@ const navigation = [
             </button>
           </div>
         </div>
-
-        {/* Mobile Search */}
-        <div className="md:hidden pb-4">
-          <SearchBar onSearch={handleSearch} />
+{/* Mobile Search */}
+        <div className="md:hidden px-4 pb-4">
+          <SearchBar onSearch={handleSearch} className="w-full" />
         </div>
       </div>
 
