@@ -24,7 +24,7 @@ const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [reviewsLoading, setReviewsLoading] = useState(false);
   const [error, setError] = useState('');
-  const [showReviewForm, setShowReviewForm] = useState(false);
+  const [showReviewModal, setShowReviewModal] = useState(false);
   const [reviewFilter, setReviewFilter] = useState('all');
   useEffect(() => {
     loadCompanyData();
@@ -66,10 +66,39 @@ const loadCompanyData = async () => {
     }
   };
 
-  const handleReviewSubmitted = async () => {
-    setShowReviewForm(false);
+const handleReviewSubmitted = async () => {
+    setShowReviewModal(false);
     await loadReviews();
   };
+
+  const closeModal = () => {
+    setShowReviewModal(false);
+  };
+
+  const handleModalBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
+
+  // Handle escape key
+  React.useEffect(() => {
+    const handleEscapeKey = (e) => {
+      if (e.key === 'Escape' && showReviewModal) {
+        closeModal();
+      }
+    };
+
+    if (showReviewModal) {
+      document.addEventListener('keydown', handleEscapeKey);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey);
+      document.body.style.overflow = 'unset';
+    };
+  }, [showReviewModal]);
 
   const handleApply = async (job) => {
     try {
@@ -265,9 +294,9 @@ const loadCompanyData = async () => {
             <h2 className="text-2xl font-semibold text-gray-900">
               Employee Reviews ({reviews.length})
             </h2>
-            <Button
+<Button
               variant="primary"
-              onClick={() => setShowReviewForm(true)}
+              onClick={() => setShowReviewModal(true)}
               icon="Plus"
             >
               Write Review
@@ -331,17 +360,6 @@ const loadCompanyData = async () => {
             </div>
           )}
 
-          {/* Review Form */}
-          {showReviewForm && (
-            <div className="mb-8">
-              <ReviewForm
-                companyId={id}
-                onReviewSubmitted={handleReviewSubmitted}
-                onCancel={() => setShowReviewForm(false)}
-              />
-            </div>
-          )}
-
           {/* Reviews List */}
           {reviewsLoading ? (
             <Loading type="reviews" />
@@ -349,8 +367,8 @@ const loadCompanyData = async () => {
             <Empty
               title="No reviews yet"
               message="Be the first to share your experience working at this company!"
-              actionLabel="Write First Review"
-              onAction={() => setShowReviewForm(true)}
+actionLabel="Write First Review"
+              onAction={() => setShowReviewModal(true)}
               icon="MessageSquare"
             />
           ) : (
@@ -377,8 +395,30 @@ const loadCompanyData = async () => {
               )}
             </div>
           )}
-        </div>
+</div>
       </motion.div>
+
+      {/* Review Modal */}
+      {showReviewModal && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+          onClick={handleModalBackdropClick}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <ReviewForm
+              companyId={id}
+              onReviewSubmitted={handleReviewSubmitted}
+              onCancel={closeModal}
+            />
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 };
